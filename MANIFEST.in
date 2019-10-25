@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include exchange_rate_banguat *.css
+recursive-include exchange_rate_banguat *.csv
+recursive-include exchange_rate_banguat *.html
+recursive-include exchange_rate_banguat *.ico
+recursive-include exchange_rate_banguat *.js
+recursive-include exchange_rate_banguat *.json
+recursive-include exchange_rate_banguat *.md
+recursive-include exchange_rate_banguat *.png
+recursive-include exchange_rate_banguat *.py
+recursive-include exchange_rate_banguat *.svg
+recursive-include exchange_rate_banguat *.txt
+recursive-exclude exchange_rate_banguat *.pyc
