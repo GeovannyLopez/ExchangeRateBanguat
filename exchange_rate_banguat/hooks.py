@@ -90,23 +90,35 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"exchange_rate_banguat.tasks.all"
-# 	],
-# 	"daily": [
-# 		"exchange_rate_banguat.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"exchange_rate_banguat.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"exchange_rate_banguat.tasks.weekly"
-# 	]
-# 	"monthly": [
-# 		"exchange_rate_banguat.tasks.monthly"
-# 	]
-# }
+scheduler_events = {
+	# Se ejecuta cada 4 minuts
+	# "all": [
+	# 	"frappe_training.tasks.all"
+	# ],
+	# Se ejecuta cada dia 00:00
+	"daily": [
+		"exchange_rate_banguat.task.daily"
+	],
+	# Se ejecuta a cada hora
+	"hourly": [
+		"exchange_rate_banguat.task.hourly"
+	],
+	# Cron linux especificacion freq
+	"cron": {
+		# Cada minuto
+		"0/01 * * * *": [
+			"exchange_rate_banguat.task.cada_minuto"
+		]
+	}
+	# Se ejecuta acada semana
+	# "weekly": [
+	# 	"frappe_training.tasks.weekly"
+	# ],
+	# # Se ejecuta cada mes
+	# "monthly": [
+	# 	"frappe_training.tasks.monthly"
+	# ]
+}
 
 # Testing
 # -------
