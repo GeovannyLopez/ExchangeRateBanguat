@@ -190,3 +190,13 @@ def consultar_a_banguat(peticion):
         frappe.msgprint(_('<b>error consulta</b>'))
     else:
         return response.content
+
+
+@frappe.whitelist()
+def api_test(data):
+    dd = json.loads(data)
+    if dd['seleccion'] == 1:
+        estado = preparar_peticion_banguat(str(dd['seleccion']))
+        return estado
+    else:
+        return 'Opcion no valida'
